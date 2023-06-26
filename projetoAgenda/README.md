@@ -14,6 +14,7 @@
 - CSS3
 - Node.js
 - Express.js
+- Bootstrap 5
 - Webpack
 
 ### Banco de dados utilizado
