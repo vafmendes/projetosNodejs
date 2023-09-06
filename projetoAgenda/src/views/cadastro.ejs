@@ -4,42 +4,37 @@
 <div class="container">
     <div class="row">
         <div class="row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8 my-3">
-                
-                <div class=" container shadow-lg py-5 col-lg-15">
-                  <h1 class="text-center">Tela de Cadastro</h1>
-                    <form action="" method="">
-                        <div class="row">
+            <div class="col-10  mx-auto">
+                <div class=" container shadow-lg py-4 col-lg-9">
+                  <h1 class="text-center">Cadastro</h1>
+                    <form action="/cadastro/register" method="POST">
+                        <div class="row mx-5">
                             <div class="col-lg">
-                                <div class="form-floating my-5 py-6 col-lg">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-                                    <label for="floatingInput">Nome</label>
+                              <p>Faça aqui o seu cadastro</p>
+                                <div class="form-floating my-2 py-6 col-lg">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="nomeCompleto" name="nomeCompleto" required>
+                                    <label for="floatingInput">Nome Completo</label>
                                   </div>
+
                                   <div class="form-floating my-5 py-6 col-lg">
-                                      <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-                                      <label for="floatingInput">Nome de Usuário</label>
-                                    </div>
-                            </div>
-                            <div class="col-lg">
-                                <div class="form-floating my-5">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                                    <input type="email" class="form-control" id="floatingInput" placeholder="email" name="email" required>
                                     <label for="floatingInput">email</label>
                                   </div>
-                                <div class="form-floating my-5">
-                                  <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+
+                                <div class="form-floating my-5 py-6 col-lg">
+                                  <input type="password" class="form-control" id="floatingInput" placeholder="senha" name="senha" required>
                                   <label for="floatingInput">Senha</label>
                                 </div>
+
+                            </div>   
+                          </div>
+                            <div class="text-center">
+                              <button type="submit" class="btn btn-dark btn-lg btn-primary">Enviar</button>
                             </div>
-                        </div>
-                        <div class="text-center">
-                          <button type="submit" class="btn btn-dark btn-lg btn-primary mb-3 ">Enviar</button>
                         </div>
                       </form>
                 </div>
-
             </div>
-            <div class="col-lg-2"></div>
         </div>
     </div>
 </div>
