@@ -12,6 +12,7 @@ route.get('/login/index', loginController.index);
 
 //Rotas de cadastro
 route.get('/cadastro', cadastroController.cadastro);
+route.post('/cadastro/register', cadastroController.register);
 
 
 module.exports = route;
