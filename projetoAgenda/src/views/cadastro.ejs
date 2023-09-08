@@ -7,22 +7,27 @@
             <div class="col-10  mx-auto">
                 <div class=" container shadow-lg py-4 col-lg-9">
                   <h1 class="text-center">Cadastro</h1>
+
+                  <%- include('./includes/messages/msgs'); %>
+
+
                     <form action="/cadastro/register" method="POST">
+                      <input type="hidden" name="_csrf" value=<%= csrfToken %>>
                         <div class="row mx-5">
                             <div class="col-lg">
                               <p>Faça aqui o seu cadastro</p>
                                 <div class="form-floating my-2 py-6 col-lg">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="nomeCompleto" name="nomeCompleto" required>
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="nomeCompleto" name="nomeCompleto">
                                     <label for="floatingInput">Nome Completo</label>
                                   </div>
 
                                   <div class="form-floating my-5 py-6 col-lg">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="email" name="email" required>
+                                    <input type="email" class="form-control" id="floatingInput" placeholder="email" name="email">
                                     <label for="floatingInput">email</label>
                                   </div>
 
                                 <div class="form-floating my-5 py-6 col-lg">
-                                  <input type="password" class="form-control" id="floatingInput" placeholder="senha" name="senha" required>
+                                  <input type="password" class="form-control" id="floatingInput" placeholder="senha" name="senha">
                                   <label for="floatingInput">Senha</label>
                                 </div>
 
