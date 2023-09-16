@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+const bcryptjs  = require('bcryptjs');
 
 const CadastroSchema = new mongoose.Schema({
     nomeCompleto: {type: String, required: true},
     email:{type: String, required: true},
     senha: {type: String, required: true}
 })
+
 
 const CadastroModel = mongoose.model('Cadastro', CadastroSchema);
 
@@ -16,15 +18,48 @@ class Cadastro {
         this.user = null;
     }
 
+    async login(){
+        this.valida();
+        if(this.errors.length > 0) return;
+        this.user = await CadastroModel.findOne({email: this.body.email});
+    
+        if(!this.user){
+            this.errors.push('Usuário não existe');
+            return;
+        }
+
+        if(this.errors.length > 0) return;
+    
+        if(!bcryptjs.compareSync(this.body.senha, this.user.senha)){
+            this.errors.push('Senha Inválida');
+            this.user = null;
+            return;
+        }
+    
+    
+    
+    }
+
     async register(){
         this.valida();
         if(this.errors.length > 0) return;
-        try{
-            this.user = await CadastroModel.create(this.body);
-        }catch(e){
-            console.log(e);
-        }
 
+        await this.userExists();
+
+        if(this.errors.length > 0) return;
+
+        const salt = bcryptjs.genSaltSync();
+        this.body.senha = bcryptjs.hashSync(this.body.senha, salt);
+
+            this.user = await CadastroModel.create(this.body);
+
+    }
+
+    async userExists(){
+            const user = await CadastroModel.findOne({email: this.body.email});
+            if(user){
+                this.errors.push('Usuário já existe.');
+            }
     }
 
     valida(){
