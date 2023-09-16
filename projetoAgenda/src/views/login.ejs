@@ -9,7 +9,10 @@
                 
                 <div class=" container shadow-lg py-5 col-lg-8">
                   <h1 class="text-center">Tela de Login</h1>
-                    <form action="../login/register" method="POST">
+
+                  <%- include('./includes/messages/msgs'); %>
+
+                    <form action="/login/login" method="POST">
                       <input type="hidden" name="_csrf" value=<%= csrfToken %>>
 
                         <div class="form-floating my-5">
