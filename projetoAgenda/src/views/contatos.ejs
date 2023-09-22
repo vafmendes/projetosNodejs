@@ -1,7 +1,39 @@
 <%- include('./includes/head/header');%>
 <%- include('./includes/head/navbar');%>
-<div class="container my-5">
-    <div class="responsive-table">
+<div class="container my-3">
+    <h1 class="text-center">Contatos</h1>
+
+      <%- include('./includes/messages/success'); %>
+      <%- include('./includes/messages/errors'); %>
+
+        <form action="/contatos/register" method="POST">
+            <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+
+            <div class="form-floating my-5">
+                <input value="<%= contato.nome %>" type="text" class="form-control" id="floatingInput" name="nome" placeholder="Nome">
+                <label for="floatingInput">Nome</label>
+            </div>
+
+            <div class="form-floating my-5">
+                <input type="text" value="<%= contato.sobrenome %>" class="form-control" id="floatingInput" name="sobrenome" placeholder="Sobrenome">
+                <label for="floatingInput">Sobrenome</label>
+            </div>
+
+            <div class="form-floating my-5">
+                <input type="email" value="<%= contato.email %>" class="form-control" id="floatingInput" name="email" placeholder="E-mail">
+                <label for="floatingInput">E-mail</label>
+            </div>
+
+            <div class="form-floating my-5">
+                <input type="tel" value="<%= contato.telefone %>" class="form-control" id="floatingInput" name="telefone" placeholder="Telefone">
+                <label for="floatingInput">Telefone</label>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-dark btn-lg btn-primary mb-3 ">Enviar</button>
+            </div>
+        </form>
+    <!-- <div class="responsive-table">
         <table class="table my-3">
             exemplo de como será a tabela de contatos da agenda <br>
             <tr>
@@ -23,6 +55,6 @@
                 <td>emailteste@gmail.com</td>
             </tr>
         </table>
-    </div>
+    </div> -->
 </div>
 <%- include('./includes/footer/footer');%>
