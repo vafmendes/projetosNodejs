@@ -10,7 +10,8 @@
                 <div class=" container shadow-lg py-5 col-lg-8">
                   <h1 class="text-center">Tela de Login</h1>
 
-                  <%- include('./includes/messages/msgs'); %>
+                  <%- include('./includes/messages/success'); %>
+                  <%- include('./includes/messages/errors'); %>
 
                     <form action="/login/login" method="POST">
                       <input type="hidden" name="_csrf" value=<%= csrfToken %>>
@@ -36,3 +37,4 @@
         </div>
     </div>
 </div>
+<%- include('./includes/footer/footer');%>
