@@ -3,6 +3,8 @@
 <%- include('./includes/head/navbar');%>
 <div class="container">
     <div class="row">
+        <%- include('./includes/messages/success'); %>
+        <%- include('./includes/messages/errors'); %>
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8 my-4">
@@ -11,21 +13,17 @@
 
                 <p class="text-center lead">Clique em <b>Login</b> para acessar seus contatos</p>
                 <p class="text-center lead">Caso não esteja logado clique em <b>Cadastre-se</b></p>
-                <p class="text-center lead">Seus contatos estão abaixo</p>
-
-                <div class="row">
-                    <div class="col">
-                        <div class="alert alert-danger my-3">Não existem contatos cadastrados</div>
-                    </div>
-                </div>
-
                 
+
+
                 <%} else{%>
                     <h1 class="text-center">Seja Bem Vindo a sua Agenda de Contatos Digital <%= user.nomeCompleto %></h1>
-                    <p class="text-center lead my-4">Clique em <b>Contatos</b> no menu acima para acessar seus contatos</p>
+                    <p class="text-center lead">Seus contatos estão abaixo</p>
+                    <p class="text-center lead my-4">Clique em <b>Contatos</b> no menu acima para inserir seus contatos</p>
                 <% } %>
             </div>
             <div class="col-lg-2"></div>
+            
         </div>
     </div>
 </div>
