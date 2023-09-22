@@ -8,7 +8,8 @@
                 <div class=" container shadow-lg py-4 col-lg-9">
                   <h1 class="text-center">Cadastro</h1>
 
-                  <%- include('./includes/messages/msgs'); %>
+                  <%- include('./includes/messages/success'); %>
+                  <%- include('./includes/messages/errors'); %>
 
 
                     <form action="/cadastro/register" method="POST">
@@ -43,3 +44,4 @@
         </div>
     </div>
 </div>
+<%- include('./includes/footer/footer');%>
