@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { async } = require('regenerator-runtime');
 const validator = require('validator');
 
 const HomeSchema = new mongoose.Schema({
@@ -58,7 +59,16 @@ Contato.prototype.cleanUp = function(){
         sobrenome: this.body.sobrenome,
         email: this.body.email,
         telefone: this.body.telefone
-    }
+    };
+};
+
+Contato.prototype.edit = async function(id){
+    if(typeof id !== 'string') return;
+    this.valida();
+    if(this.errors.length > 0) return;
+    this.contato = await ContatosModel.findByIdAndUpdate(id, this.body, {new: true});
+
+
 }
 
 
