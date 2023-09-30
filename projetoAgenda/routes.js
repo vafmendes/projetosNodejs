@@ -21,8 +21,9 @@ route.post('/cadastro/register', cadastroController.register);
 
 //Rota de contatos
 route.get('/contatos/', loginRequired, contatosController.contato);
-route.get('/contatos/:id', loginRequired, contatosController.editIndex);
 route.post('/contatos/register', contatosController.register);
+route.get('/contatos/:id', loginRequired, contatosController.editIndex);
+route.post('/contatos/edit/:id', contatosController.edit);
 
 
 module.exports = route;
