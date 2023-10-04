@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { async } = require('regenerator-runtime');
 const validator = require('validator');
 
 const HomeSchema = new mongoose.Schema({
@@ -22,6 +21,21 @@ Contato.buscaId = async function(id){
     const contato = await ContatosModel.findById(id);
 
     return contato;
+};
+
+Contato.buscaContatos = async function(){
+    const contatos = await ContatosModel.find().sort({criadoEm: -1});
+    
+    return contatos;
+
+};
+
+Contato.delete = async function(id){
+    if(typeof id !== 'string') return;
+    const contato = await ContatosModel.findOneAndDelete({_id: id});
+    
+    return contato;
+
 };
 
 Contato.prototype.register = async function(){
