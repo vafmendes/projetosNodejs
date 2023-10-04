@@ -23,7 +23,8 @@ route.post('/cadastro/register', cadastroController.register);
 route.get('/contatos/', loginRequired, contatosController.contato);
 route.post('/contatos/register', contatosController.register);
 route.get('/contatos/:id', loginRequired, contatosController.editIndex);
-route.post('/contatos/edit/:id', contatosController.edit);
+route.post('/contatos/edit/:id', loginRequired, contatosController.edit);
+route.get('/contatos/delete/:id', loginRequired, contatosController.delete);
 
 
 module.exports = route;
