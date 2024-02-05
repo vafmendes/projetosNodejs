@@ -26,17 +26,12 @@ function Calculadora(){
         this.display.value = this.display.value.slice(0, -1);
     },
 
-    this.realizaConta = () => {
+    this.realizaConta = (e, t) => {
         let conta = eval(this.display.value);
 
         try{
             conta = eval(conta);
-
-            if (Number.isNaN(conta) || typeof conta !== 'number') {
-                alert('Conta inválida');
-                return;
-              }
-            this.display.value = conta;
+            this.display.value = conta; 
         }catch(e){
             alert('Conta inválida');
 
