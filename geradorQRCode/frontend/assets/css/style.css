@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', cursive;
+  }
+  
+  body{
+      height: 110vh;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom, #5ea2dd, #fff);
+  }
+  
+  main{
+      display: flex;
+      flex-direction: column;
+      padding: 18px;
+      margin-top: 4%;
+  }
+
+  input{
+    margin-top:4%;
+    padding: 5px;
+    width: 300px;
+    font-size: 20px;
+    outline: 0;
+
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .qrcodeImagem{
+    margin-top: 5%;
+  }
