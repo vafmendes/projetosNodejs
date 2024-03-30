@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn {
+    padding: 0.7em 1.3em;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight:bold;
+    font-size:1.1em; 
+    color: #fff;
+    border-radius:6px;
+    transition:0.3s; 
+}
+
+@keyframes pulsar {
+  to {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    color:#ffffff; 
+  }
+}
+
+.pulsar {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-animation-name: pulsar;
+  animation-name: pulsar;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+
+ .pulsar:hover, .pulsar:focus, .pulsar:disabled{
+    background: rgb(231, 228, 228);
+    -webkit-animation-name: pulsar;
+    animation-name: pulsar;
+    -webkit-animation-duration: 0s;
+    animation-duration: 0s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+.main-jogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    gap: 30px;
+
+}
+
+
